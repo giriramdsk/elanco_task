@@ -1,0 +1,101 @@
+/* home.component.css */
+
+.container {
+    margin-top: 50px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.table {
+    font-size: 14px;
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+    font-weight: bold;
+}
+
+.table tbody td {
+    border-color: #dee2e6;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+ul li strong {
+    font-weight: bold;
+}
+
+
+/* Add CSS for pagination and loader */
+
+.loader {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #f3f3f3;
+    border-top-color: #007bff;
+    animation: loader 0.8s infinite linear;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination li {
+    list-style: none;
+}
+
+.pagination li a {
+    display: block;
+    padding: 0.5rem;
+    margin: 0.2rem;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+}
+
+.pagination li a:hover {
+    background-color: #eee;
+}
+
+.pagination li.active a {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}

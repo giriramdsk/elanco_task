@@ -1,0 +1,13 @@
+.card {
+    height: 100px;
+}
+
+.card:hover {
+    box-shadow: 0 0 5px 2px rgba(44, 224, 47, 0.3);
+    cursor: pointer;
+}
+
+::ng-deep .d-block>.modal-dialog {
+    max-width: initial!important;
+    width: 78%;
+}

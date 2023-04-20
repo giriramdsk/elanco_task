@@ -1,0 +1,16 @@
+<nav class="navbar">
+    <div class="navbar-brand">
+        <h2>Elanco Cloud Environment Data</h2>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" *ngIf="router.url !== '/'" routerLink="/">Home</a>
+            <a routerLink="/applications" class="navbar-item">Applications</a>
+            <a routerLink="/resources" class="navbar-item">Resources</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let application of applications">
+            <div class="card" (click)="openApplicationDetails(application)">
+                <div class="card-body">
+                    <h5 class="card-title">{{ application }}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-applications-popup *ngIf="isApplicationsPopupOpen" [applications]="applications" (close)="closeApplicationsPopup()"></app-applications-popup>

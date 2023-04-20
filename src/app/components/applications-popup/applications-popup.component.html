@@ -1,0 +1,44 @@
+<div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+        <div class="modal-header ">
+            <h4 class="modal-title " id="applications-popup-label ">All Applications</h4>
+        </div>
+        <div class="modal-body" style="height:50vh;overflow:auto">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col ">Consumed Quantity</th>
+                            <th scope="col ">Cost</th>
+                            <th scope="col ">Date</th>
+                            <th scope="col ">Instance Id</th>
+                            <th scope="col ">Meter Category</th>
+                            <th scope="col ">Resource Group</th>
+                            <th scope="col ">Resource Location</th>
+                            <th scope="col ">Unit Of Measure</th>
+                            <th scope="col ">Location</th>
+                            <th scope="col ">Service Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let application of applications ">
+                            <td>{{ application.ConsumedQuantity }}</td>
+                            <td>{{ application.Cost }}</td>
+                            <td>{{ application.Date }}</td>
+                            <td>{{ application.InstanceId }}</td>
+                            <td>{{ application.MeterCategory }}</td>
+                            <td>{{ application.ResourceGroup }}</td>
+                            <td>{{ application.ResourceLocation }}</td>
+                            <td>{{ application.UnitOfMeasure }}</td>
+                            <td>{{ application.Location }}</td>
+                            <td>{{ application.ServiceName }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="modal-footer ">
+            <button type="button " class="btn btn-secondary " (click)="closePopup() ">Close</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="container">
+    <h2>Resources</h2>
+    <div class="row" *ngIf="!visible">
+        <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let resource of resources">
+            <div class="card" (click)="loadResourceDetails(resource)">
+                <div class="card-body">
+                    <h5 class="card-title">{{ resource }}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content" *ngIf="visible">
+        <div class="modal-header ">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+        </div>
+
+        <div class="modal-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Service Name</th>
+                        <th>Date</th>
+                        <th>Consumed Quantity</th>
+                        <th>Unit of Measure</th>
+                        <th>Cost</th>
+                        <th>Resource Group</th>
+                        <th>Resource Location</th>
+                        <th>Tags</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let resource of selectedResource">
+                        <td>{{ resource.ServiceName }}</td>
+                        <td>{{ resource.Date }}</td>
+                        <td>{{ resource.ConsumedQuantity }}</td>
+                        <td>{{ resource.UnitOfMeasure }}</td>
+                        <td>{{ resource.Cost }}</td>
+                        <td>{{ resource.ResourceGroup }}</td>
+                        <td>{{ resource.ResourceLocation }}</td>
+                        <ul>
+                            <li><strong>App Name:</strong> {{ resource.Tags['app-name'] }}</li>
+                            <li><strong>Environment:</strong> {{ resource.Tags['environment'] }}</li>
+                            <li><strong>Business Unit:</strong> {{ resource.Tags['business-unit'] }}</li>
+                        </ul>
+                        <td>{{ resource.Location }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal()">Close</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="container mt-5">
+    <h2 class="mb-3">API Response Data(RAW)</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Consumed Quantity</th>
+                <th>Cost</th>
+                <th>Instance ID</th>
+                <th>Meter Category</th>
+                <th>Resource Group</th>
+                <th>Resource Location</th>
+                <th>Tags</th>
+                <th>Unit of Measure</th>
+                <th>Location</th>
+                <th>Service Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of pagedData">
+                <td>{{ item.Date }}</td>
+                <td>{{ item.ConsumedQuantity }}</td>
+                <td>{{ item.Cost }}</td>
+                <td>{{ item.InstanceId }}</td>
+                <td>{{ item.MeterCategory }}</td>
+                <td>{{ item.ResourceGroup }}</td>
+                <td>{{ item.ResourceLocation }}</td>
+                <td>
+                    <ul>
+                        <li><strong>App Name:</strong> {{ item.Tags['app-name'] }}</li>
+                        <li><strong>Environment:</strong> {{ item.Tags['environment'] }}</li>
+                        <li><strong>Business Unit:</strong> {{ item.Tags['business-unit'] }}</li>
+                    </ul>
+                </td>
+                <td>{{ item.UnitOfMeasure }}</td>
+                <td>{{ item.Location }}</td>
+                <td>{{ item.ServiceName }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="loader-container" *ngIf="isLoading">
+        <div class="loader"></div>
+    </div>
+</div>
